@@ -1,0 +1,123 @@
+# A-01 — Hello World REST API
+## Terminal Commands & Quick Reference
+
+**Project location:**
+`C:\Users\rkrev\Downloads\New folder\A01-Hello-World-API`
+
+### 1. Start the project
+
+Open PowerShell and execute these commands in order:
+
+**Step 1 — Navigate to the project folder**
+```powershell
+cd "C:\Users\rkrev\Downloads\New folder\A01-Hello-World-API"
+```
+
+**Step 2 — Activate virtual environment**
+```powershell
+.\venv\Scripts\Activate.ps1
+```
+
+**Step 3 — Start FastAPI**
+```powershell
+python -m uvicorn main:app --reload
+```
+
+Your server should display:
+```text
+Uvicorn running on http://127.0.0.1:8000
+Application startup complete.
+```
+
+### 2. Open the API in your browser
+
+| URL | Purpose |
+|---|---|
+| http://127.0.0.1:8000/ | API response |
+| http://127.0.0.1:8000/docs | Swagger interactive documentation |
+| http://127.0.0.1:8000/openapi.json | OpenAPI specification |
+
+### 3. Stop the server
+
+Press:
+```text
+Ctrl + C
+```
+
+This stops the running Uvicorn server.
+
+### 4. Deactivate virtual environment
+
+After stopping the server:
+```powershell
+deactivate
+```
+
+This exits the project's Python virtual environment.
+
+### 5. Install dependencies
+
+If setting up the project on a new machine or recreating the virtual environment:
+
+```powershell
+python -m venv venv
+.\venv\Scripts\Activate.ps1
+python -m pip install -r requirements.txt
+```
+
+### 6. Git and GitHub commands
+
+Run these inside the project folder.
+
+| Command | Purpose |
+|---|---|
+| `git status` | Check changed and untracked files |
+| `git add .` | Stage project changes |
+| `git add main.py` | Stage one specific file |
+| `git commit -m "message"` | Save a local commit |
+| `git push` | Upload commits to GitHub |
+| `git pull` | Download and integrate remote changes |
+| `git log --oneline` | View commit history |
+| `git remote -v` | Check connected GitHub repository |
+
+**First-time Git setup** (already done for this project):
+```powershell
+git init
+git branch -M main
+git remote add origin https://github.com/rkrevanth295-arch/Hello-World-REST-API-.git
+```
+
+### 7. Important project files
+
+```text
+A01-Hello-World-API/
+│
+├── main.py             # FastAPI application
+├── requirements.txt    # Python dependencies
+├── README.md           # Project documentation
+├── .gitignore          # Files Git should ignore
+├── venv/               # Python virtual environment
+└── __pycache__/        # Automatically generated Python cache
+```
+
+### 8. Troubleshooting
+
+| Problem | Solution |
+|---|---|
+| `Could not import module main` | Check that you're inside the project folder and `main.py` exists |
+| `No module named fastapi` | Activate venv and install requirements |
+| `uvicorn is not recognized` | Use `python -m uvicorn main:app --reload` |
+| Port 8000 already in use | Stop the other server or use `--port 8001` |
+| PowerShell blocks activation | Run `Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass` and activate again |
+| Git push rejected | Run `git pull` first and resolve any conflicts |
+
+**Remember:**
+
+- `venv` keeps project dependencies isolated.
+- `Uvicorn` runs the FastAPI server.
+- `--reload` automatically restarts the server when you change Python code.
+- `Ctrl + C` stops the server.
+- `deactivate` exits the virtual environment.
+- `git push` uploads your committed changes to GitHub.
+
+**GitHub repository:** https://github.com/rkrevanth295-arch/Hello-World-REST-API-
